@@ -11,7 +11,6 @@ async function startCrawling(){
     const framePage = await page.frames().find(el => el.url().includes("/item/sise_day.naver?code=005930"))
 
     for(let i=3; i<=7; i++){
-        await page.waitForTimeout(500)
         const date = await framePage.$eval(
             `body > table.type2 > tbody > tr:nth-child(${i}) > td:nth-child(1) > span`,
             (el) => el.textContent
