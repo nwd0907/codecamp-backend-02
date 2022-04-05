@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Board {
+  number: Int!
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+type ProductCategory {
+  id: String!
+  name: String!
+}
+
+type Query {
+  fetchBoards: [Board!]!
+}
+
+type Mutation {
+  createBoard(writer: String!, title: String!, contents: String!, createBoardInput: CreateBoardInput!): String!
+  createProductCategory(name: String!): ProductCategory!
+}
+
+input CreateBoardInput {
+  writer: String!
+  title: String!
+  contents: String!
+}
