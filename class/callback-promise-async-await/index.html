@@ -1,86 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>콜백과 친구들</title>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-      function myCallback() {
-        const ccc = new XMLHttpRequest();
-        ccc.open("get", "http://numbersapi.com/random?min=1&max=200");
-        ccc.send();
-        ccc.addEventListener("load", (res) => {
-          console.log("데이터가 로드되면 이거 실행시켜줘!!!");
-          console.log(res);
-          const num = res.target.response.split(" ")[0];
+    <head>
+        <title>콜백과 친구들</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            function myCallback() {
+                const ccc = new XMLHttpRequest();
+                ccc.open("get", "http://numbersapi.com/random?min=1&max=200");
+                ccc.send();
+                ccc.addEventListener("load", (res) => {
+                    console.log("데이터가 로드되면 이거 실행시켜줘!!!");
+                    console.log(res);
+                    const num = res.target.response.split(" ")[0];
 
-          const ddd = new XMLHttpRequest();
-          ddd.open("get", `http://koreanjson.com/posts/${num}`);
-          ddd.send();
-          ddd.addEventListener("load", (res) => {
-            console.log("두번째는 이거 실행시켜줘!!!");
-            console.log(JSON.parse(res.target.response));
-            const userId = JSON.parse(res.target.response).UserId;
+                    const ddd = new XMLHttpRequest();
+                    ddd.open("get", `http://koreanjson.com/posts/${num}`);
+                    ddd.send();
+                    ddd.addEventListener("load", (res) => {
+                        console.log("두번째는 이거 실행시켜줘!!!");
+                        console.log(JSON.parse(res.target.response));
+                        const userId = JSON.parse(res.target.response).UserId;
 
-            const eee = new XMLHttpRequest();
-            eee.open("get", `http://koreanjson.com/posts?userId=${userId}`);
-            eee.send();
-            eee.addEventListener("load", (res) => {
-              console.log("마지막으로 이거 실행시켜줘!!!");
-              console.log(res.target.response);
-            });
-          });
-        });
-      }
+                        const eee = new XMLHttpRequest();
+                        eee.open(
+                            "get",
+                            `http://koreanjson.com/posts?userId=${userId}`
+                        );
+                        eee.send();
+                        eee.addEventListener("load", (res) => {
+                            console.log("마지막으로 이거 실행시켜줘!!!");
+                            console.log(res.target.response);
+                        });
+                    });
+                });
+            }
 
-      new Promise((resolve, reject) => {
-        // 외부요청,
-        // 오래걸리는작업
-        resolve("철수");
-        reject("다람쥐초등학교");
-      })
-        .then((res) => {})
-        .catch((error) => {});
+            new Promise((resolve, reject) => {
+                // 외부요청,
+                // 오래걸리는작업
+                resolve("철수");
+                reject("다람쥐초등학교");
+            })
+                .then((res) => {})
+                .catch((error) => {});
 
-      function myPromise() {
-        console.log("1번 실행!!");
-        axios
-          .get("http://numbersapi.com/random?min=1&max=200")
-          .then((res) => {
-            console.log("2번 실행!!");
-            const num = res.data.split(" ")[0];
-            return axios.get(`http://koreanjson.com/posts/${num}`);
-          })
-          .then((res) => {
-            console.log("3번 실행!!");
-            const userId = res.data.UserId;
-            return axios.get(`http://koreanjson.com/posts?userId=${userId}`);
-          })
-          .then((res) => {
-            console.log("4번 실행!!");
-            console.log(res.data);
-          });
-        console.log("5번 실행!!");
-      }
+            function myPromise() {
+                console.log("1번 실행!!");
+                axios
+                    .get("http://numbersapi.com/random?min=1&max=200")
+                    .then((res) => {
+                        console.log("2번 실행!!");
+                        const num = res.data.split(" ")[0];
+                        return axios.get(`http://koreanjson.com/posts/${num}`);
+                    })
+                    .then((res) => {
+                        console.log("3번 실행!!");
+                        const userId = res.data.UserId;
+                        return axios.get(
+                            `http://koreanjson.com/posts?userId=${userId}`
+                        );
+                    })
+                    .then((res) => {
+                        console.log("4번 실행!!");
+                        console.log(res.data);
+                    });
+                console.log("5번 실행!!");
+            }
 
-      async function myAsyncAwait() {
-        const res1 = await axios.get(
-          "http://numbersapi.com/random?min=1&max=200"
-        );
-        const num = res1.data.split(" ")[0];
+            async function myAsyncAwait() {
+                const res1 = await axios.get(
+                    "http://numbersapi.com/random?min=1&max=200"
+                );
+                const num = res1.data.split(" ")[0];
 
-        const res2 = await axios.get(`http://koreanjson.com/posts/${num}`);
-        const userId = res2.data.UserId;
+                const res2 = await axios.get(
+                    `http://koreanjson.com/posts/${num}`
+                );
+                const userId = res2.data.UserId;
 
-        const res3 = await axios.get(
-          `http://koreanjson.com/posts?userId=${userId}`
-        );
-        console.log(res3.data);
-      }
-    </script>
-  </head>
-  <body>
-    <button onclick="myCallback()">Callback 연습하기!!</button>
-    <button onclick="myPromise()">Promise 연습하기!!</button>
-    <button onclick="myAsyncAwait()">AsyncAwait 연습하기!!</button>
-  </body>
+                const res3 = await axios.get(
+                    `http://koreanjson.com/posts?userId=${userId}`
+                );
+                console.log(res3.data);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="myCallback()">Callback 연습하기!!</button>
+        <button onclick="myPromise()">Promise 연습하기!!</button>
+        <button onclick="myAsyncAwait()">AsyncAwait 연습하기!!</button>
+    </body>
 </html>
