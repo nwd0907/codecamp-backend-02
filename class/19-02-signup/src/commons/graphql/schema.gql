@@ -31,7 +31,8 @@ scalar DateTime
 type User {
   id: String!
   email: String!
-  password: String!
+  name: String!
+  age: Int!
 }
 
 type Product {
@@ -60,10 +61,11 @@ type Query {
 
 type Mutation {
   createBoard(writer: String!, title: String!, contents: String!, createBoardInput: CreateBoardInput!): String!
-  createProductCategory(name: String!): ProductCategory!
   createProduct(createProductInput: CreateProductInput!): Product!
   updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
   deleteProduct(productId: String!): Boolean!
+  createProductCategory(name: String!): ProductCategory!
+  createUser(email: String!, password: String!, name: String!, age: Float!): User!
 }
 
 input CreateBoardInput {

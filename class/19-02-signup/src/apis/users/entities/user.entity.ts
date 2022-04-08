@@ -13,7 +13,7 @@ export class User {
   email: string;
 
   @Column()
-  @Field(() => String)
+  // @Field(() => String) 비밀번호 노출 금지!!
   password: string;
 
   @Column()
