@@ -1,0 +1,103 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Board {
+  number: Int!
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+type ProductCategory {
+  id: String!
+  name: String!
+}
+
+type ProductSaleslocation {
+  id: String!
+  address: String!
+  addressDetail: String!
+  lat: Float!
+  lng: Float!
+  meetingTime: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type User {
+  id: String!
+  email: String!
+  name: String!
+  age: Int!
+}
+
+type Product {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  isSoldout: Boolean!
+  productSaleslocation: ProductSaleslocation!
+  productCategory: ProductCategory!
+  user: User!
+  productTags: [ProductTag!]!
+}
+
+type ProductTag {
+  id: String!
+  name: String!
+  products: [Product!]!
+}
+
+type Query {
+  fetchBoards: [Board!]!
+  fetchProducts: [Product!]!
+  fetchProduct(productId: String!): Product!
+  fetchUser: String!
+}
+
+type Mutation {
+  login(email: String!, password: String!): String!
+  createBoard(writer: String!, title: String!, contents: String!, createBoardInput: CreateBoardInput!): String!
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
+  deleteProduct(productId: String!): Boolean!
+  createProductCategory(name: String!): ProductCategory!
+  createUser(email: String!, password: String!, name: String!, age: Float!): User!
+}
+
+input CreateBoardInput {
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
+  productSaleslocation: ProductSaleslocationInput!
+  productCategoryId: String!
+  productTags: [String!]!
+}
+
+input ProductSaleslocationInput {
+  address: String!
+  addressDetail: String!
+  lat: Float!
+  lng: Float!
+  meetingTime: DateTime!
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Int
+  productSaleslocation: ProductSaleslocationInput
+  productCategoryId: String
+  productTags: [String!]
+}
