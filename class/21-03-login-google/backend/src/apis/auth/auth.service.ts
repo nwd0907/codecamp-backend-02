@@ -12,7 +12,7 @@ export class AuthService {
     );
 
     // 개발환경
-    res.setHeader('Set-Cookie', `refreshToken=${refreshToken}`);
+    res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; path=/;`); // path 설정 반드시 필요!! (소셜로그인에서 문제 발생할 수 있음!)
 
     // 배포환경
     // res.setHeader('Access-Control-Allow-Origin', 'https://myfrontsite.com')

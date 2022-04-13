@@ -6,7 +6,11 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 export class JwtRefreshStrategy extends PassportStrategy(Strategy, 'refresh') {
   constructor() {
     super({
-      jwtFromRequest: (req) => req.headers.cookie.replace('refreshToken=', ''),
+      jwtFromRequest: (req) =>
+        req.headers.cookie
+          .split(';')
+          .filter((el) => el.includes('refreshToken='))[0]
+          .replace('refreshToken=', ''),
       secretOrKey: 'myRefreshKey',
     });
   }
