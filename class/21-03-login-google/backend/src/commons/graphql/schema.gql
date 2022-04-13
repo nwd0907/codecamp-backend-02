@@ -68,7 +68,7 @@ type Mutation {
   updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
   deleteProduct(productId: String!): Boolean!
   createProductCategory(name: String!): ProductCategory!
-  createUser(email: String!, password: String!, name: String!, age: Float!): User!
+  createUser(email: String!, password: String!, name: String!, age: Int!): User!
 }
 
 input CreateBoardInput {
