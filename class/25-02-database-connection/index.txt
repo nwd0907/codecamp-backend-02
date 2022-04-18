@@ -1,0 +1,14 @@
+# 커넥션 최대값(max_connections)
+show variables;
+
+# 커넥션 최대값 조정
+set global max_connections = 15;
+
+# 현재 연결된 커넥션 갯수(Thread_connected)
+show status;
+
+# 현재 연결된 커넥션 목록
+show processlist;
+
+# 커넥션 종료(kill 커넥션번호)
+kill 25;
