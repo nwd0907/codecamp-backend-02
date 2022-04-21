@@ -1,0 +1,18 @@
+# 프로시저 삭제(기존에 만들어져 있다면 삭제하고 다시 만들기)
+drop procedure mydummydata;
+
+# 프로시저 생성
+create procedure mydummydata()
+begin
+	declare i int default 1;
+	while i <= 10000000 do
+		insert into board(writer, title, contents) values('철수', rand(), '내용');
+		set i = i + 1;
+	end while;
+end;
+
+# 프로시저 목록
+show procedure status;
+
+# 프로시저 실행
+call mydummydata();
