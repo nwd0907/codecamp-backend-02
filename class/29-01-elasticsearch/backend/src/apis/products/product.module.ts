@@ -16,11 +16,7 @@ import { ProductService } from './product.service';
       ProductTag,
     ]),
     ElasticsearchModule.register({
-      node: 'https://elastic.codebootcamp.co.kr',
-      auth: {
-        username: 'elastic',
-        password: 'Q6aDodSA',
-      },
+      node: 'http://elastic.codebootcamp.co.kr:9200',
     }),
   ],
   providers: [

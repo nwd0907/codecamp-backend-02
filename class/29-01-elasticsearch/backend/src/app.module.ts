@@ -17,7 +17,7 @@ import * as redisStore from 'cache-manager-redis-store';
 @Module({
   imports: [
     AuthModule,
-    BoardModule,
+    // BoardModule,
     FileModule,
     PointTransactionModule,
     ProductModule,
@@ -36,7 +36,7 @@ import * as redisStore from 'cache-manager-redis-store';
       password: 'root',
       database: 'myserver02',
       entities: [__dirname + '/apis/**/*.entity.*'],
-      synchronize: true,
+      // synchronize: true,
       logging: true,
     }),
     // CacheModule.register<RedisClientOptions>({
