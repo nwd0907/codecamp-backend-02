@@ -40,15 +40,15 @@ export class ProductResolver {
     @Args('createProductInput') createProductInput: CreateProductInput,
   ) {
     // 엘라스틱서치에서 등록 연습하기!! => 연습일뿐, 실제로는 MySQL에 저장할 예정!!
-    // this.elasticsearchService.create({
-    //   id: 'myid',
-    //   index: 'myproduct',
-    //   document: {
-    //     name: '철수',
-    //     age: 13,
-    //     school: '다람쥐초등학교',
-    //   },
-    // });
+    this.elasticsearchService.create({
+      id: 'myid',
+      index: 'myproduct',
+      document: {
+        name: '철수',
+        age: 13,
+        school: '다람쥐초등학교',
+      },
+    });
 
     // 엘라스틱서치에서 등록해보기위해 임시로 주석!!
     return this.productService.create({ createProductInput });
