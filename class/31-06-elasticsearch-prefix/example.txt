@@ -1,0 +1,19 @@
+##### prefix 검색 #####
+
+    # postman prefix 검색하기(성공) - 키보드
+    {
+      "query": {
+        "bool": {
+          "should":[{ "prefix": { "name": "키" } }]
+        }
+      }
+    }
+
+    # postman prefix 검색하기(실패) - 키보드
+    {
+      "query": {
+        "match": {
+          "name": "키"
+        }
+      }
+    }
