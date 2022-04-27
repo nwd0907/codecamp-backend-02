@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { MessagePattern } from '@nestjs/microservices';
 import { AppService } from './app.service';
+import { Resolver, Mutation, Query } from '@nestjs/graphql';
 
-@Controller()
-export class AppController {
+@Resolver()
+export class AppResolver {
   constructor(private readonly appService: AppService) {}
 
   // @Get()
@@ -11,8 +11,8 @@ export class AppController {
   //   return this.appService.getHello();
   // }
 
-  @MessagePattern({ cmd: 'aaa' })
-  login() {
-    return 'login 성공!!';
+  @Query(() => String)
+  fetchBoards() {
+    return 'fetchBoards에서 데이터 보내기 성공!!';
   }
 }

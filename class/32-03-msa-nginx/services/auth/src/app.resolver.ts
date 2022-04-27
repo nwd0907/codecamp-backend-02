@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { MessagePattern } from '@nestjs/microservices';
 import { AppService } from './app.service';
+import { Resolver, Mutation, Query } from '@nestjs/graphql';
 
-@Controller()
-export class AppController {
+@Resolver()
+export class AppResolver {
   constructor(private readonly appService: AppService) {}
 
   // @Get()
@@ -11,7 +11,12 @@ export class AppController {
   //   return this.appService.getHello();
   // }
 
-  @MessagePattern({ cmd: 'aaa' })
+  @Query(() => String)
+  aaa() {
+    return 'aaa';
+  }
+
+  @Mutation(() => String)
   login() {
     return 'login 성공!!';
   }
