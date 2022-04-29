@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "codecamp-308601",
+  "private_key_id": "cdbd199191466b30a91c3789cc8c03824e3a535c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwk4sfwl/RRtGm\nQcFxCuy217dS+RCbQdpF818ZbmYWQa2GFXp1KQnN1y7JYGTG6AeFW31pHnJXaGVP\nn+hK4ddLiGOkp81vsVqEiksFAVnpUiZMszQRZ2964cnTLkmTt5mPglsDyT3KBtZQ\nW2XErJQAxhfLhO221xK4pr254QtUViATlOpSNklQvVbzCsp+zuVvrAXBk0mUmQPm\nBI5gYYzrna8CzhUp54ktJD5BL6kzWUM4F+OBvO9D+Xvx4SYbVKIK0Y7MvBkLNY05\nRFPc6yCvYUNOjmhrTqCEe2jVkDNgYw22Q1v01onQe8S1gfkPA6FFyTCX5AQKa5wG\nARFUfzlTAgMBAAECggEAJb9EzING7HwRMVN5QOsu819mB0zLKgWH3dBLEiqxlCxy\nJenNheJCAEjx7Ya3xHWxteZ7Bs/Fbb4Zek4a4HcrCTCc7IQavLfTO+Y8Z1OEnwY6\nvcbJaLcN89z0wjpw7C0hnLYnMsYAeYHAquj+9m5WLVwrlgxSrPWJQQQUJvpe66Yq\nlEFmSmgRpDqXaJrYDP1wXm+2jikJInZjZMYkRnk8m59AwMsSoWWKsAiTCyOSGACy\nfkxBh7uunIdV4gWOlu8QRrso+3wOA1qDCEBO3jTtzzB47hDaSDRE/wuzPpQ7rWfc\nm76LQQtnI5PO+ZInrxaLAN/gjYmSxSqGZyNPm5r2EQKBgQDjmqQWN/P8ndCvCd/s\njfwwgM0Hm0b2duGT4TB8vbC1fGgRmNZJxFaSRenHtyyGAMFgFcqG4ruEhmoiFuOg\nKtmEm1bCM4Hy6VfGEw9nNHWc/bTW6QDICxWrHMl7xBvnbxXxYaLVeClqNzmNp39R\ncYWpanynELj45TPdgBZCB1w1/wKBgQDGmyXF0SAORilKjVxpEmGJoRCHtWFsmOto\nXBIRL4ueXxhx4zqAEXjqhap0bLptIvlYNP/s5vpIyTgJZPWLjvKh89tuJ1U8++LZ\nxf61EC2qgMVPASFyKcviq3lP4bL3mkI4S4GW+fpp10I907MuqfyF4eXIQB8pIrWB\nK2+sySlErQKBgAF/L9sRjSI5K3krOHTGzkTHZBHLvKC8UWl2jqoTWUkoQ0ryVV5w\n0xztJsdwdfN/p8Xo/sb6UL9jXulQezi/b2TG3MA0NIOTc0dTMsO7/ZYFuR28tIuc\nPw08CDsvI/vWqC9JNBfxTVxsdo1u75BqjbV6hM1Yd87zOu8W+459m+ajAoGBALKx\naV0A+gydyA0R/3FyXlwMlOjlo5CoTjaJkJ/x3XdTLJVb04jjL54jQeia42nKq/pX\nRWWLtOnEUizxr5Qvu9NHq8kCjsjeAY/be37B3bSpQ93/sG4deRqrGe1rrzDklGw+\nU4zZwht02F70mSWFQHXdeHeiaecDGbfsswANxpnJAoGADcIsiCOTKO8n3IhWgZFG\nssMCwXo+mc5BN8WqzzsxdpJMI4RV/M9GjUNj1PZpaDaX+0GQrPZxrgpphZvH/uIa\n9VIk1+anc6voks+vSPjbcYAA9Fgrdz7iN//se5Y2LA4Ld9ew1kGGyvfkwA6FTR7s\n+63ZHUezEo+qaaj7rr33vi4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mybigquery@codecamp-308601.iam.gserviceaccount.com",
+  "client_id": "110222548526085234321",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mybigquery%40codecamp-308601.iam.gserviceaccount.com"
+}
