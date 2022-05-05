@@ -19,7 +19,7 @@ steps:
       - set
       - image
       - deployment/my-backend-02
-      - my-backend02-sha256-1=asia.gcr.io/codecamp-308601/my-backend02:13
+      - my-backend02-sha256-1=asia.gcr.io/codecamp-308601/my-backend02:14
     env:
       - CLOUDSDK_COMPUTE_ZONE=asia-northeast3
       - CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-02-1
