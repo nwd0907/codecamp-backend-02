@@ -8,6 +8,9 @@ export class AppController {
   @Get('/')
   getHello(): string {
     console.log("zxcvzxcv")
+    console.log('===============')
+    console.log(process.env)
+    console.log('===============')
     return this.appService.aaa();
   }
 }
