@@ -1,0 +1,25 @@
+steps:
+  # 1단계 => docker-compose -f docker-compose.prod.yaml build
+  - name: docker/compose:1.29.0
+    args:
+      - -f
+      - class/deploy-with-docker/backend/docker-compose.prod.yaml
+      - build
+
+  # 2단계 => docker-compose -f docker-compose.prod.yaml push
+  - name: docker/compose:1.29.0
+    args:
+      - -f
+      - class/deploy-with-docker/backend/docker-compose.prod.yaml
+      - push
+
+  # 3단계 => kubectl set image deployment/my-backend-02 my-backend02-sha256-1=asia.gcr.io/codecamp-308601/my-backend02:13
+  - name: gcr.io/cloud-builders/kubectl
+    args:
+      - set
+      - image
+      - deployment/my-backend-02
+      - my-backend02-sha256-1=asia.gcr.io/codecamp-308601/my-backend02:13
+    env:
+      - CLOUDSDK_COMPUTE_ZONE=asia-northeast3
+      - CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-02-1
